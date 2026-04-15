@@ -47,10 +47,10 @@ export default async function DashboardPage({
 
   return (
     <main className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
-      <section className="relative overflow-hidden rounded-3xl border bg-linear-to-br from-emerald-100 via-cyan-50 to-amber-100 p-6 sm:p-8">
+      <section className="relative overflow-hidden rounded-3xl border bg-linear-to-br from-primary/10 via-background to-secondary/20 p-6 sm:p-8 shadow-sm">
         <div className="relative z-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl space-y-2">
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            <h1 className="bg-linear-to-br from-foreground to-foreground/70 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
               ClassicModels Sales Dashboard
             </h1>
             <p className="text-sm text-muted-foreground sm:text-base">

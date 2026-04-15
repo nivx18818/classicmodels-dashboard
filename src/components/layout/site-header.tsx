@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { BarChart3, Search } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { ChartHistogramIcon, Search01Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 
 export function SiteHeader() {
   return (
@@ -9,7 +10,7 @@ export function SiteHeader() {
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <Link className="group inline-flex items-center gap-2" href="/">
           <span className="rounded-lg bg-primary/10 p-2 text-primary transition-colors group-hover:bg-primary/20">
-            <BarChart3 className="size-4" />
+            <HugeiconsIcon icon={ChartHistogramIcon} />
           </span>
           <span className="text-sm font-semibold tracking-wide sm:text-base">
             ClassicModels Analytics
@@ -33,7 +34,7 @@ export function SiteHeader() {
             )}
             href="/search"
           >
-            <Search className="size-4" />
+            <HugeiconsIcon icon={Search01Icon} />
             Search
           </Link>
         </nav>

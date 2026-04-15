@@ -5,11 +5,13 @@ const globalForPrisma = global as unknown as {
   prisma: PrismaClient;
 };
 
-const adapter = new PrismaMariaDb({
-  host: process.env.DB_HOST,
-  port: Number(process.env.DB_PORT),
-  connectionLimit: 5,
-});
+const databaseUrl = process.env.DATABASE_URL;
+
+if (!databaseUrl) {
+  throw new Error("DATABASE_URL environment variable is required");
+}
+
+const adapter = new PrismaMariaDb(databaseUrl);
 
 const prisma =
   globalForPrisma.prisma ||

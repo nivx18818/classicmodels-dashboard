@@ -13,7 +13,6 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - All routes live under `app/` using folder-based routing.
 - Server Components by default; add `"use client"` only when interactivity requires it.
 - Co-locate page-level components in the route folder.
-- Shared/reusable UI belongs in `@repo/design-system`, not in `apps/web`.
 
 ## Imports
 
@@ -33,14 +32,7 @@ import { MyComponent } from '@/components/my-component';
 ## Code Style & Conventions
 
 - Use TypeScript across apps/packages.
-- Follow Prettier config (2 spaces, single quotes, semicolons, trailing commas, 100-char line width, LF).
-- Use ESLint from shared configs in `@repo/eslint-config`; fix warnings/errors before submitting.
-- Keep imports/exports sorted (perfectionist plugin warns on ordering issues, and can be autofixed with ESLint).
-- Prefer type-only imports where applicable (`@typescript-eslint/consistent-type-imports`).
-- For frontend code, follow Next.js + React Hooks lint rules and Core Web Vitals rules.
-- For backend code, follow NestJS patterns and keep async calls handled (floating promises are warned).
-- Keep changes scoped and consistent with existing folder boundaries: `apps/*` for runnable apps, `packages/*` for shared code/config.
-- Use Conventional Commits (configured with `@commitlint/config-conventional`).
+- Follow Next.js + React Hooks lint rules and Core Web Vitals rules.
 
 ### TypeScript
 
@@ -60,7 +52,7 @@ import { MyComponent } from '@/components/my-component';
 ## Styling
 
 - Tailwind CSS utilities only — no inline styles, no CSS modules, no hardcoded color values.
-- Use `cn()` from `@repo/design-system/lib/utils` for conditional class merging.
+- Use `cn()` from `@/lib/utils` for conditional class merging.
 - Consistent color palette via design system tokens (extend in `globals.css`, never override locally).
 - Responsive design: mobile-first, container queries where appropriate.
 - Dark mode: use Tailwind's `dark:` variant, never manual media queries in JS.
@@ -85,7 +77,7 @@ import { MyComponent } from '@/components/my-component';
 ## Performance
 
 - Images: always use `next/image` with explicit `width`/`height` or `fill`.
-- Fonts: always use `next/font` (already configured in `@repo/design-system/lib/fonts.ts`).
+- Fonts: always use `next/font`.
 - Avoid importing large libraries client-side; prefer server-side or dynamic imports.
 - Use `React.lazy` / `next/dynamic` for heavy client components.
 
@@ -114,4 +106,3 @@ When adding a new feature, follow this order:
 - Do not use the `pages/` router — this app uses App Router exclusively.
 - Do not use `useEffect` for data fetching — use Server Components.
 - Do not hardcode colors, spacing, or breakpoints outside of Tailwind config.
-- Do not import from `apps/api` directly — always go through the API over HTTP.

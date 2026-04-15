@@ -20,9 +20,9 @@ Fullstack analytics web application built with Next.js App Router + Prisma for t
   - Top customers
   - Best-selling products
 - Clean architecture with separation between:
-  - API routes (`app/api`)
-  - Service layer (`lib/services`)
-  - UI pages/components (`app`, `components`)
+  - API routes (`src/app/api`)
+  - Service layer (`src/lib/services`)
+  - UI pages/components (`src/app`, `src/components`)
 
 ## Setup
 
@@ -55,29 +55,30 @@ Fullstack analytics web application built with Next.js App Router + Prisma for t
 ## Project Structure
 
 ```text
-app/
-	api/
-		customers/route.ts
-		products/route.ts
-		orders/search/route.ts
-		stats/
-			dashboard/route.ts
-			revenue-over-time/route.ts
-			top-customers/route.ts
-			best-selling-products/route.ts
-	search/page.tsx
-	page.tsx
+src/
+	app/
+		api/
+			customers/route.ts
+			products/route.ts
+			orders/search/route.ts
+			stats/
+				dashboard/route.ts
+				revenue-over-time/route.ts
+				top-customers/route.ts
+				best-selling-products/route.ts
+		search/page.tsx
+		page.tsx
 
-components/
-	dashboard/
-	search/
-	ui/
+	components/
+		dashboard/
+		search/
+		ui/
 
-lib/
-	api/
-	domain/
-	services/
-	prisma.ts
+	lib/
+		api/
+		domain/
+		services/
+		prisma.ts
 ```
 
 ## API Endpoints
